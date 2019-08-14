@@ -6,6 +6,7 @@ export const FoodContext = React.createContext();
 
 const initialState = [
   {
+    id: 1,
     name: 'test',
     owner: 'jin',
     createDate: '2019-01-01',
@@ -18,6 +19,7 @@ const initialState = [
     isStore: 'false'
   },
   {
+    id: 2,
     name: 'test2',
     owner: 'owl',
     createDate: '2019-01-01',
