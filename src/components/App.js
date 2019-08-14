@@ -4,6 +4,7 @@ import { normalize } from 'styled-normalize';
 
 import FoodStore from '../store/FoodStore';
 import Test from '../components/test';
+import Header from '../components/Header';
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
@@ -21,7 +22,7 @@ const App = () => {
       <GlobalStyle />
       <FoodStore>
         <ContentWrapper>
-          <Test />
+          <Header />
         </ContentWrapper>
       </FoodStore>
     </>
