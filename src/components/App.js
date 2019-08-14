@@ -1,6 +1,9 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
+
+import FoodStore from '../store/FoodStore';
+import Test from '../components/test';
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
@@ -12,21 +15,17 @@ const ContentWrapper = styled.div`
   box-sizing: border-box;
 `;
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <>
-        <GlobalStyle />
+const App = () => {
+  return (
+    <>
+      <GlobalStyle />
+      <FoodStore>
         <ContentWrapper>
-          <h1>hello react boiler</h1>
+          <Test />
         </ContentWrapper>
-      </>
-    );
-  }
-}
+      </FoodStore>
+    </>
+  );
+};
 
 export default App;
