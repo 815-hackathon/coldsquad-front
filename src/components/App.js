@@ -5,6 +5,7 @@ import { normalize } from 'styled-normalize';
 import FoodStore from '../store/FoodStore';
 import Test from '../components/test';
 import Header from '../components/Header';
+import Foodpage from '../components/Foodpage';
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
@@ -23,6 +24,7 @@ const App = () => {
       <FoodStore>
         <ContentWrapper>
           <Header />
+          <Foodpage />
         </ContentWrapper>
       </FoodStore>
     </>
