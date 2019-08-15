@@ -20,6 +20,7 @@ const initialState = [
     category: 'drink',
     location: '냉동고',
     memo: '마시지마',
+    duration: 3,
     createdAt: '2019-08-14T16:26:37.806Z',
     updatedAt: '2019-08-14T16:26:37.806Z',
     __v: 0
@@ -34,6 +35,7 @@ const initialState = [
     category: '빵',
     location: '냉장고',
     memo: '아무나 먹어라',
+    duration: 3,
     isExpire: 'false',
     isStore: 'false'
   },
@@ -48,6 +50,7 @@ const initialState = [
     location: '냉장고',
     memo: 'ttests',
     isExpire: 'false',
+    duration: 3,
     isStore: 'false'
   }
 ];

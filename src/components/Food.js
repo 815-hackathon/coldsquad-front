@@ -37,7 +37,7 @@ const Thumb = styled.img`
   height: 50px;
 `;
 
-const Food = ({ id, name, owner, category, memo, expireDate }) => {
+const Food = ({ id, name, owner, category, memo, expireDate, duration }) => {
   return (
     <Item>
       <Row>
@@ -47,7 +47,7 @@ const Food = ({ id, name, owner, category, memo, expireDate }) => {
         <Category>{category}</Category>
       </Row>
       <Row>
-        <Expire>{expireDate}</Expire>
+        <Expire>남은 보관기간 : {duration} 일</Expire>
         <Button>x</Button>
       </Row>
     </Item>
