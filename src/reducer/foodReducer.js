@@ -10,6 +10,6 @@ export default (foods, { type, payload }) => {
         }
       ];
     case 'DELETE':
-      return todos.filter(todo => todo.id !== payload);
+      return foods.filter(foods => foods.id !== payload);
   }
 };

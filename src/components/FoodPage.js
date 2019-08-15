@@ -1,10 +1,10 @@
 import React, { useState, useReducer } from 'react';
 import styled from 'styled-components';
 
-import FoodStore from '../store/FoodStore';
 import foodReducer from '../reducer/foodReducer';
 
 import FoodList from './FoodList';
+import FoodCategory from './FoodCategory';
 
 const ContentWrapper = styled.div`
   max-width: 1080px;
@@ -47,16 +47,25 @@ const Filter = styled.span`
 
 const FoodPage = () => {
   const [location, setLocation] = useState('냉장');
-  const [filter, setFilter] = useState('전체');
+  const [category, setCategory] = useState('전체');
   const [foods, dispatch] = useReducer(foodReducer, initialState);
 
   const toggleLocation = value => {
     setLocation(value);
   };
 
-  const toggleFilter = value => {
-    setFilter(value);
+  const toggleCategory = value => {
+    setCategory(value);
   };
+
+  const filteredFoods = foods =>
+    foods.filter(food => {
+      if (category === '전체') {
+        return food.location === location;
+      } else {
+        return food.location === location && food.category === category;
+      }
+    });
 
   return (
     <>
@@ -70,32 +79,8 @@ const FoodPage = () => {
             냉동
           </Filter>
         </div>
-        <div>
-          <Filter selected={filter === '전체'} onClick={() => toggleFilter('전체')}>
-            전체
-          </Filter>
-          /
-          <Filter selected={filter === '유제품'} onClick={() => toggleFilter('유제품')}>
-            유제품
-          </Filter>
-          /
-          <Filter selected={filter === '주류'} onClick={() => toggleFilter('주류')}>
-            주류
-          </Filter>
-          /
-          <Filter selected={filter === '음료'} onClick={() => toggleFilter('음료')}>
-            음료
-          </Filter>
-          /
-          <Filter selected={filter === '빙과류'} onClick={() => toggleFilter('빙과류')}>
-            빙과류
-          </Filter>
-          /
-          <Filter selected={filter === '빵'} onClick={() => toggleFilter('빵')}>
-            빵
-          </Filter>
-        </div>
-        <FoodList foods={foods} />
+        <FoodCategory category={category} toggleCategory={toggleCategory} />
+        <FoodList foods={filteredFoods(foods)} />
       </ContentWrapper>
     </>
   );
