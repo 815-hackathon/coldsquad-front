@@ -78,7 +78,7 @@ const FoodPage = () => {
       <Link to={'/newfood'}>
         <button>+</button>
       </Link>
-      <div>
+      <div style={{ marginBottom: '1rem' }}>
         <Filter selected={location === '냉장'} onClick={() => toggleLocation('냉장')}>
           냉장
         </Filter>

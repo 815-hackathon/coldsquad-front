@@ -17,9 +17,11 @@ const Input = styled.input.attrs(({ type, placeholder, min, required }) => {
   height: 25px;
   border: none;
   border-bottom: 1px solid gray;
+  transition: all 1s;
 
   &:focus {
     outline: none;
+    border-color: rgba(0, 0, 0, 0);
   }
 
   &:focus + span::before {

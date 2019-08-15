@@ -6,9 +6,10 @@ const Button = styled.button`
   width: 100px;
   height: 40px;
   margin: 0px 0.5rem;
-  color: ${({ selected }) => (selected ? '#fff' : '#868e96')};
-  background-color: ${({ selected }) => (selected ? '#000' : '#fff')};
-  border: 1.5px solid #000;
+  color: ${({ selected }) => (selected ? '#014463' : '#868e96')};
+  background-color: ${({ selected }) => (selected ? '#bae3e0' : '#fff')};
+  border: 1.5px solid #014463;
+  border-radius: 5px;
 
   &:focus {
     outline: none;
