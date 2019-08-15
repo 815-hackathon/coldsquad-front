@@ -79,7 +79,7 @@ const makeCategory = () => {
 
 const NewFood = props => {
   const [inputs, setInput] = useState({
-    text: '',
+    name: '',
     owner: '',
     storeDuration: '',
     category: '',
@@ -97,17 +97,17 @@ const NewFood = props => {
 
   const handleClick = async e => {
     e.preventDefault();
+
     const data = await fetch('http://15.164.142.99:3000/food', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...inputs })
     });
     const result = data.json();
 
     props.history.push('/');
   };
+
   return (
     <Wrapper>
       <h2>새 품목 등록하기</h2>
