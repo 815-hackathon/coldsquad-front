@@ -8,6 +8,7 @@ import foodReducer from '../reducer/foodReducer';
 import FoodList from './FoodList';
 import FoodCategory from './FoodCategory';
 import Filter from './Filter';
+import PlusButton from './PlusButton';
 
 const initialState = [
   {
@@ -82,9 +83,6 @@ const FoodPage = () => {
 
   return (
     <>
-      <Link to={'/newfood'}>
-        <button>+</button>
-      </Link>
       <div style={{ marginBottom: '1rem' }}>
         <Filter selected={location === '냉장'} onClick={() => toggleLocation('냉장')}>
           냉장
@@ -92,6 +90,9 @@ const FoodPage = () => {
         <Filter selected={location === '냉동'} onClick={() => toggleLocation('냉동')}>
           냉동
         </Filter>
+        <Link to={'/newfood'} style={{ float: 'right' }}>
+          <PlusButton />
+        </Link>
       </div>
       <FoodCategory category={category} toggleCategory={toggleCategory} />
       <FoodList foods={filteredFoods(foods)} />

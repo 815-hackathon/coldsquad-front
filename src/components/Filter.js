@@ -6,8 +6,8 @@ const Button = styled.button`
   width: 100px;
   height: 40px;
   margin: 0px 0.5rem;
-  color: ${({ selected }) => (selected ? '#014463' : '#868e96')};
-  background-color: ${({ selected }) => (selected ? '#bae3e0' : '#fff')};
+  color: ${({ selected }) => (selected ? '#fff' : '#868e96')};
+  background-color: ${({ selected }) => (selected ? '#2392c0' : '#fff')};
   border: 1.5px solid #014463;
   border-radius: 5px;
 
@@ -15,8 +15,6 @@ const Button = styled.button`
     outline: none;
   }
 `;
-
-const Wrapper = styled.div``;
 
 const Filter = ({ children, selected, onClick }) => {
   return (

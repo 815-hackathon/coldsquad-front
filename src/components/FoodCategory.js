@@ -6,8 +6,8 @@ import { categories } from '../constants';
 
 const FoodCategory = ({ category, toggleCategory }) => {
   const getComponents = () =>
-    categories.map(item => (
-      <Filter selected={category === item} onClick={() => toggleCategory(item)}>
+    categories.map((item, i) => (
+      <Filter key={i} selected={category === item} onClick={() => toggleCategory(item)}>
         {item}
       </Filter>
     ));
