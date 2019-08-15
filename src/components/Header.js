@@ -15,7 +15,7 @@ const Header = () => {
     <Wrapper>
       <h1>Coldsquad</h1>
       <Navigation>
-        <Link to={'/'}>List</Link>|<Link to={'/notice'}>Notice</Link>
+        <Link to={'/'}>List</Link> / <Link to={'/notice'}>Notice</Link>
       </Navigation>
     </Wrapper>
   );
