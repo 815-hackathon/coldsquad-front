@@ -6,14 +6,14 @@ const Item = styled.div`
   height: 4rem;
   display: flex;
   flex-direction: column;
-  cursor: pointer;
+  margin: 1rem 0;
 
   &:hover button {
     opacity: 1;
   }
 
   & div {
-    border: 1px solid black;
+    // border: 1px solid black;
     font-size: 20px;
   }
 `;

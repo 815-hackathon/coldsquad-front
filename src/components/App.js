@@ -14,16 +14,24 @@ const GlobalStyle = createGlobalStyle`
   ${normalize}
 `;
 
+const Wrapper = styled.div`
+  max-width: 1080px;
+  margin: 2rem;
+  box-sizing: border-box;
+`;
+
 const App = () => {
   return (
     <Router>
       <GlobalStyle />
-      <Header />
-      <Route exact path={'/'} component={Foodpage} />
-      <Route exact path={'/notice'} component={NoticePage} />
-      <Route exact path={'/newfood/'} component={NewFood} />
-      <Route exact path={'/food/:id'} component={ShowFood} />
-      <Route exact path={'/newNotice'} component={NewNotice} />
+      <Wrapper>
+        <Header />
+        <Route exact path={'/'} component={Foodpage} />
+        <Route exact path={'/notice'} component={NoticePage} />
+        <Route exact path={'/newfood/'} component={NewFood} />
+        <Route exact path={'/food/:id'} component={ShowFood} />
+        <Route exact path={'/newNotice'} component={NewNotice} />
+      </Wrapper>
     </Router>
   );
 };

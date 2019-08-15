@@ -8,12 +8,6 @@ import foodReducer from '../reducer/foodReducer';
 import FoodList from './FoodList';
 import FoodCategory from './FoodCategory';
 
-const ContentWrapper = styled.div`
-  max-width: 1080px;
-  margin: 2rem;
-  box-sizing: border-box;
-`;
-
 const initialState = [
   {
     id: 1,
@@ -38,6 +32,19 @@ const initialState = [
     category: '빵',
     location: '냉장',
     memo: '아무나 먹어라',
+    isExpire: 'false',
+    isStore: 'false'
+  },
+  {
+    id: 3,
+    name: '콬콜라',
+    owner: 'jin',
+    createDate: '2019-01-01',
+    expireDate: '2019-01-01',
+    storeDate: '2019-01-01',
+    category: '음료',
+    location: '냉장',
+    memo: 'ttests',
     isExpire: 'false',
     isStore: 'false'
   }
@@ -71,22 +78,20 @@ const FoodPage = () => {
 
   return (
     <>
-      <ContentWrapper>
-        <Link to={'/newfood'}>
-          <button>+</button>
-        </Link>
-        <div>
-          <Filter selected={location === '냉장'} onClick={() => toggleLocation('냉장')}>
-            냉장
-          </Filter>
-          /
-          <Filter selected={location === '냉동'} onClick={() => toggleLocation('냉동')}>
-            냉동
-          </Filter>
-        </div>
-        <FoodCategory category={category} toggleCategory={toggleCategory} />
-        <FoodList foods={filteredFoods(foods)} />
-      </ContentWrapper>
+      <Link to={'/newfood'}>
+        <button>+</button>
+      </Link>
+      <div>
+        <Filter selected={location === '냉장'} onClick={() => toggleLocation('냉장')}>
+          냉장
+        </Filter>
+        /
+        <Filter selected={location === '냉동'} onClick={() => toggleLocation('냉동')}>
+          냉동
+        </Filter>
+      </div>
+      <FoodCategory category={category} toggleCategory={toggleCategory} />
+      <FoodList foods={filteredFoods(foods)} />
     </>
   );
 };
