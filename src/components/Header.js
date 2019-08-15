@@ -4,10 +4,19 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;
+  justify-content: space-between;
 `;
 
 const Navigation = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 0.3rem;
 `;
 
 const Header = () => {
@@ -15,7 +24,8 @@ const Header = () => {
     <Wrapper>
       <h1>Coldsquad</h1>
       <Navigation>
-        <Link to={'/'}>List</Link> / <Link to={'/notice'}>Notice</Link>
+        <StyledLink to={'/'}>List</StyledLink>
+        <StyledLink to={'/notice'}>Notice</StyledLink>
       </Navigation>
     </Wrapper>
   );
