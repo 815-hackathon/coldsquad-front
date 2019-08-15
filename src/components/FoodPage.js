@@ -1,5 +1,5 @@
 import React, { useState, useReducer } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import styled from 'styled-components';
 
@@ -11,20 +11,20 @@ import Filter from './Filter';
 
 const initialState = [
   {
-    id: 1,
-    name: 'test',
-    owner: 'jin',
-    createDate: '2019-01-01',
-    expireDate: '2019-01-01',
-    storeDate: '2019-01-01',
-    category: '빙과류',
-    location: '냉동',
-    memo: '매우 맛있음',
-    isExpire: 'false',
-    isStore: 'false'
+    _id: '5d54363d174bf703bcc3a3f5',
+    name: 'cocacola',
+    owner: 'circus',
+    expireDate: '2019-08-21T16:26:37.794Z',
+    storeDate: '2019-08-14T16:26:37.000Z',
+    category: 'drink',
+    location: '냉장고',
+    memo: '마시지마',
+    createdAt: '2019-08-14T16:26:37.806Z',
+    updatedAt: '2019-08-14T16:26:37.806Z',
+    __v: 0
   },
   {
-    id: 2,
+    _id: 2,
     name: 'test2',
     owner: 'owl',
     createDate: '2019-01-01',
@@ -37,7 +37,7 @@ const initialState = [
     isStore: 'false'
   },
   {
-    id: 3,
+    _id: 3,
     name: '콬콜라',
     owner: 'jin',
     createDate: '2019-01-01',
@@ -72,6 +72,13 @@ const FoodPage = () => {
         return food.location === location && food.category === category;
       }
     });
+
+  const handleClick = id => {};
+
+  const handleRemove = (e, id) => {
+    e.stoppropagation();
+    console.log(id);
+  };
 
   return (
     <>

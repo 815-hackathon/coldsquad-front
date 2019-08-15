@@ -1,19 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 import Food from './Food';
 
-const StyledLink = styled(Link)`
-  text-decoration: none;
-`;
-
-const FoodList = ({ foods }) => {
+const FoodList = ({ foods, onClick, onRemove }) => {
   const getFoods = foods =>
     foods.map(food => (
-      <StyledLink key={food.id} to={`/food/${food.id}`}>
-        <Food {...food} />
-      </StyledLink>
+      <NavLink to={`/food/${food._id}`}>
+        <Food data-id={food._id} key={food._id} {...food} onClick={onClick} onRemove={onRemove} />
+      </NavLink>
     ));
 
   const foodComponents = getFoods(foods);
