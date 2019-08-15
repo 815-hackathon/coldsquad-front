@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from 'react';
+import React, { useState, useReducer, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import styled from 'styled-components';
@@ -58,7 +58,30 @@ const initialState = [
 const FoodPage = () => {
   const [location, setLocation] = useState('냉장고');
   const [category, setCategory] = useState('전체');
+  const [loading, setLoading] = useState(true);
   const [foods, dispatch] = useReducer(foodReducer, initialState);
+
+  const foodInitFn = data => dispatch({ type: 'INIT', payload: data });
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      const rawData = await fetch(url);
+      const jsonData = await rawData.json();
+
+      foodInitFn(jsonData);
+      // if (isSuccess) {
+      // } else {
+      //   throw new Error(message);
+      // }
+    } catch (e) {
+      console.log(e);
+    } finally {
+      setLoading(false);
+    }
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const toggleLocation = value => {
     setLocation(value);
