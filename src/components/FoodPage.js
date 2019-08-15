@@ -7,6 +7,7 @@ import foodReducer from '../reducer/foodReducer';
 
 import FoodList from './FoodList';
 import FoodCategory from './FoodCategory';
+import Filter from './Filter';
 
 const initialState = [
   {
@@ -50,10 +51,6 @@ const initialState = [
   }
 ];
 
-const Filter = styled.span`
-  color: ${({ selected }) => (selected ? 'red' : 'black')};
-`;
-
 const FoodPage = () => {
   const [location, setLocation] = useState('냉장');
   const [category, setCategory] = useState('전체');
@@ -85,7 +82,6 @@ const FoodPage = () => {
         <Filter selected={location === '냉장'} onClick={() => toggleLocation('냉장')}>
           냉장
         </Filter>
-        /
         <Filter selected={location === '냉동'} onClick={() => toggleLocation('냉동')}>
           냉동
         </Filter>
