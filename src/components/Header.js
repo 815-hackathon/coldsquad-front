@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -13,7 +14,9 @@ const Header = () => {
   return (
     <Wrapper>
       <h1>Coldsquad</h1>
-      <Navigation>List | Notice</Navigation>
+      <Navigation>
+        <Link to={'/'}>List</Link>|<Link to={'/notice'}>Notice</Link>
+      </Navigation>
     </Wrapper>
   );
 };

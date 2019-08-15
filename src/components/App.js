@@ -1,33 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
 
-import FoodStore from '../store/FoodStore';
-import Test from '../components/test';
-import Header from '../components/Header';
-import Foodpage from '../components/Foodpage';
+import Header from './Header';
+import Foodpage from './Foodpage';
+import NoticePage from './NoticePage';
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
 `;
 
-const ContentWrapper = styled.div`
-  max-width: 1080px;
-  margin: 2rem;
-  box-sizing: border-box;
-`;
-
 const App = () => {
   return (
-    <>
+    <Router>
       <GlobalStyle />
-      <FoodStore>
-        <ContentWrapper>
-          <Header />
-          <Foodpage />
-        </ContentWrapper>
-      </FoodStore>
-    </>
+      <Header />
+      <Route exact path={'/'} component={Foodpage} />
+      <Route exact path={'/notice'} component={NoticePage} />
+    </Router>
   );
 };
 
