@@ -8,7 +8,7 @@ const NoticePage = () => {
   const notices = [
     {
       _id: '123',
-      name: '공지입니다.',
+      name: 'JIN',
       content: '냉장고에 김밥 다 드셔도 됩니다.'
     }
   ];
@@ -16,7 +16,7 @@ const NoticePage = () => {
     <div>
       <div style={{ width: '100%' }}>
         <h2 style={{ display: 'inline-block' }}>공지사항</h2>
-        <Link to={'/newfood'} style={{ float: 'right' }}>
+        <Link to={'/newNotice'} style={{ float: 'right' }}>
           <PlusButton />
         </Link>
       </div>

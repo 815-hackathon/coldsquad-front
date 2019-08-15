@@ -38,7 +38,7 @@ const Bar = styled.span`
     transition: all 1s;
     width: 0px;
     height: 2px;
-    background: #b197fc;
+    background: #bae3e0;
   }
 `;
 

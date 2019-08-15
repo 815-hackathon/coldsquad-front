@@ -20,8 +20,8 @@ const Notice = ({ name, content }) => {
         <NoticeIMG src="../assets/notice.png" />
       </div>
       <div>
-        <h3>{name}</h3>
-        <div>{content}</div>
+        <h4>{content}</h4>
+        <div>{name}</div>
       </div>
     </Wrapper>
   );
