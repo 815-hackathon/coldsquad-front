@@ -1,4 +1,6 @@
 import React, { useState, useReducer } from 'react';
+import { Link } from 'react-router-dom';
+
 import styled from 'styled-components';
 
 import foodReducer from '../reducer/foodReducer';
@@ -70,6 +72,9 @@ const FoodPage = () => {
   return (
     <>
       <ContentWrapper>
+        <Link to={'/newfood'}>
+          <button>+</button>
+        </Link>
         <div>
           <Filter selected={location === '냉장'} onClick={() => toggleLocation('냉장')}>
             냉장
