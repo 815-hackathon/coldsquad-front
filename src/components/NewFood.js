@@ -107,8 +107,8 @@ const NewFood = () => {
             <option value="" disabled selected>
               위치
             </option>
-            <option value="냉장">냉장</option>
-            <option value="냉동">냉동</option>
+            <option value="냉장고">냉장고</option>
+            <option value="냉동고">냉동고</option>
           </Select>
         </Row>
         <Row>

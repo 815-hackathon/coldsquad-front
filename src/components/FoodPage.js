@@ -18,7 +18,7 @@ const initialState = [
     expireDate: '2019-08-21T16:26:37.794Z',
     storeDate: '2019-08-14T16:26:37.000Z',
     category: 'drink',
-    location: '냉장고',
+    location: '냉동고',
     memo: '마시지마',
     createdAt: '2019-08-14T16:26:37.806Z',
     updatedAt: '2019-08-14T16:26:37.806Z',
@@ -32,7 +32,7 @@ const initialState = [
     expireDate: '2019-01-01',
     storeDate: '2019-01-01',
     category: '빵',
-    location: '냉장',
+    location: '냉장고',
     memo: '아무나 먹어라',
     isExpire: 'false',
     isStore: 'false'
@@ -45,7 +45,7 @@ const initialState = [
     expireDate: '2019-01-01',
     storeDate: '2019-01-01',
     category: '음료',
-    location: '냉장',
+    location: '냉장고',
     memo: 'ttests',
     isExpire: 'false',
     isStore: 'false'
@@ -53,7 +53,7 @@ const initialState = [
 ];
 
 const FoodPage = () => {
-  const [location, setLocation] = useState('냉장');
+  const [location, setLocation] = useState('냉장고');
   const [category, setCategory] = useState('전체');
   const [foods, dispatch] = useReducer(foodReducer, initialState);
 
@@ -84,10 +84,10 @@ const FoodPage = () => {
   return (
     <>
       <div style={{ marginBottom: '1rem' }}>
-        <Filter selected={location === '냉장'} onClick={() => toggleLocation('냉장')}>
+        <Filter selected={location === '냉장고'} onClick={() => toggleLocation('냉장고')}>
           냉장
         </Filter>
-        <Filter selected={location === '냉동'} onClick={() => toggleLocation('냉동')}>
+        <Filter selected={location === '냉동고'} onClick={() => toggleLocation('냉동고')}>
           냉동
         </Filter>
         <Link to={'/newfood'} style={{ float: 'right' }}>

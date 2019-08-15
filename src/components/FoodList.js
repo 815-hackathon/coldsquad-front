@@ -7,7 +7,7 @@ import Food from './Food';
 const FoodList = ({ foods, onClick, onRemove }) => {
   const getFoods = foods =>
     foods.map(food => (
-      <NavLink to={`/food/${food._id}`}>
+      <NavLink to={`/food/${food._id}`} key={food._id}>
         <Food data-id={food._id} key={food._id} {...food} onClick={onClick} onRemove={onRemove} />
       </NavLink>
     ));
