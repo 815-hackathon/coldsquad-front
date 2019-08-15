@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { categories } from '../constants';
@@ -78,6 +78,7 @@ const makeCategory = () => {
 };
 
 const NewFood = () => {
+  const [inputs, setInput] = useState(useState);
   return (
     <Wrapper>
       <h2>새 품목 등록하기</h2>
@@ -110,6 +111,10 @@ const NewFood = () => {
             <option value="냉장고">냉장고</option>
             <option value="냉동고">냉동고</option>
           </Select>
+        </Row>
+        <Row>
+          <Input type="date" placeholder="유통기한" />
+          <Bar />
         </Row>
         <Row>
           <Memo rows={1} placeholder={'Check your memo'} />

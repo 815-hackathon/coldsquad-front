@@ -65,7 +65,7 @@ const FoodPage = () => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const rawData = await fetch(url);
+      const rawData = await fetch('http://15.164.142.99:3000/food/all');
       const jsonData = await rawData.json();
 
       foodInitFn(jsonData);

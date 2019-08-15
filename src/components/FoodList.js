@@ -7,7 +7,8 @@ import Food from './Food';
 const StyledNavLink = styled(NavLink)`
   text-decoration: none;
 
-  &:visited {
+  &:visited,
+  &:link {
     color: black;
     text-decoration: none;
   }
