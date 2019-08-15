@@ -24,34 +24,6 @@ const initialState = [
     createdAt: '2019-08-14T16:26:37.806Z',
     updatedAt: '2019-08-14T16:26:37.806Z',
     __v: 0
-  },
-  {
-    _id: 2,
-    name: 'test2',
-    owner: 'owl',
-    createDate: '2019-01-01',
-    expireDate: '2019-01-01',
-    storeDate: '2019-01-01',
-    category: '빵',
-    location: '냉장고',
-    memo: '아무나 먹어라',
-    duration: 3,
-    isExpire: 'false',
-    isStore: 'false'
-  },
-  {
-    _id: 3,
-    name: '콬콜라',
-    owner: 'jin',
-    createDate: '2019-01-01',
-    expireDate: '2019-01-01',
-    storeDate: '2019-01-01',
-    category: '음료',
-    location: '냉장고',
-    memo: 'ttests',
-    isExpire: 'false',
-    duration: 3,
-    isStore: 'false'
   }
 ];
 

@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Filter from './Filter';
-import { categories } from '../constants';
+import { categories, mappingTable } from '../constants';
 
 const FoodCategory = ({ category, toggleCategory }) => {
   const getComponents = () =>
     categories.map((item, i) => (
       <Filter key={i} selected={category === item} onClick={() => toggleCategory(item)}>
-        {item}
+        {mappingTable[item]}
       </Filter>
     ));
   return (

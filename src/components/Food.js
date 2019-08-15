@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { mappingTable } from '../constants';
 
 const Item = styled.div`
   width: 100%;
@@ -56,7 +57,7 @@ const Food = ({ id, name, owner, category, memo, expireDate, storeDuration }) =>
         <Name>
           {name} - {owner}
         </Name>
-        <Category>{category}</Category>
+        <Category>{mappingTable[category]}</Category>
       </Row>
       <Row>
         <Expire>남은 보관기간 : {storeDuration} 일</Expire>

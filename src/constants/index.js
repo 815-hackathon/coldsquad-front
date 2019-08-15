@@ -1,16 +1,16 @@
-export const categories = [
-  '유제품',
-  '음료',
-  '주류',
-  '신선식품',
-  '즉석식품',
-  '가공육',
-  '빙과류',
-  '빵',
-  '소스류',
-  '잼/초코',
-  '기타류'
-];
+// export const categories = [
+//   '유제품',
+//   '음료',
+//   '주류',
+//   '신선식품',
+//   '즉석식품',
+//   '가공육',
+//   '빙과류',
+//   '빵',
+//   '소스류',
+//   '잼/초코',
+//   '기타류'
+// ];
 
 export const mappingTable = {
   dairyProduct: '유제품',
@@ -26,7 +26,7 @@ export const mappingTable = {
   etc: '기타류'
 };
 
-export const categoriyEng = [
+export const categories = [
   'dairyProduct',
   'beverage',
   'alcohol',
