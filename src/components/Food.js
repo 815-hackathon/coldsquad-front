@@ -30,6 +30,18 @@ const Expire = styled.div``;
 
 const Button = styled.button`
   opacity: 0;
+  background-color: transparent;
+  color: red;
+  border: none;
+
+  &:active {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: red;
+    color: #fff;
+  }
 `;
 
 const Thumb = styled.img`
