@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 const Wrapper = styled.div``;
 
@@ -46,19 +46,56 @@ const Memo = styled.textarea.attrs(({ rows, placeholder }) => {
   width: 300px;
 `;
 
-const NewNotice = () => {
+const NewNotice = props => {
+  const [inputs, setInputs] = useState({
+    name: '',
+    content: ''
+  });
+
+  const handleChange = e => {
+    setInputs({
+      ...inputs,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleClick = async e => {
+    // e.stopPropagation();
+    e.preventDefault();
+    const data = await fetch('http://15.164.142.99:3000/notice', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...inputs })
+    });
+    const result = data.json();
+
+    props.history.push('/notice');
+  };
+
   return (
     <Wrapper>
       <h2>새 공지 등록하기</h2>
       <form>
         <Row>
-          <Input type="text" placeholder="이름" />
+          <Input
+            value={inputs.name}
+            type="text"
+            placeholder="이름"
+            name="name"
+            onChange={e => handleChange(e)}
+          />
           <Bar />
         </Row>
         <Row>
-          <Memo rows={1} placeholder={'Check your Notice'} />
+          <Memo
+            value={inputs.content}
+            rows={1}
+            name="content"
+            placeholder={'Check your Notice'}
+            onChange={e => handleChange(e)}
+          />
         </Row>
-        <button>확인</button>
+        <button onClick={e => handleClick(e)}>확인</button>
       </form>
     </Wrapper>
   );

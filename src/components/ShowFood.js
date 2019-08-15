@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { mappingTable } from '../constants';
 
 const Wrapper = styled.div``;
 const Row = styled.div`
@@ -37,7 +38,7 @@ const ShowFood = props => {
       <Row>이름 : {food.name}</Row>
       <Row>소유자 : {food.owner}</Row>
       <Row>남은기간 {food.storeDuration}일</Row>
-      <Row>카테고리 : {food.category}</Row>
+      <Row>카테고리 : {mappingTable[food.category]}</Row>
       <Row>위치 : {food.location}</Row>
       <Row>{food.memo}</Row>
       <button onClick={() => props.history.push('/')}>확인</button>
