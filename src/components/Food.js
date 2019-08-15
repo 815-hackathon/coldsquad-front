@@ -32,6 +32,11 @@ const Button = styled.button`
   opacity: 0;
 `;
 
+const Thumb = styled.img`
+  width: 30px;
+  height: 50px;
+`;
+
 const Food = ({ id, name, owner, category, memo, expireDate }) => {
   return (
     <Item>
