@@ -14,11 +14,11 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-const FoodList = ({ foods, onClick, onRemove }) => {
+const FoodList = ({ foods, onClick, onRemove, dispatch }) => {
   const getFoods = foods =>
     foods.map(food => (
       <StyledNavLink to={`/food/${food._id}`} key={food._id}>
-        <Food data-id={food._id} key={food._id} {...food} onClick={onClick} onRemove={onRemove} />
+        <Food data-id={food._id} key={food._id} {...food} onClick={onClick} onRemove={onRemove} dispatch={dispatch} />
       </StyledNavLink>
     ));
 

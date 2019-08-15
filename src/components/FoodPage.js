@@ -93,7 +93,7 @@ const FoodPage = () => {
         </Link>
       </div>
       <FoodCategory category={category} toggleCategory={toggleCategory} />
-      <FoodList foods={filteredFoods(foods)} />
+      <FoodList foods={filteredFoods(foods)} dispatch={dispatch} />
     </>
   );
 };

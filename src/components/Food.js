@@ -50,7 +50,22 @@ const Thumb = styled.img`
   height: 50px;
 `;
 
-const Food = ({ id, name, owner, category, memo, expireDate, storeDuration }) => {
+const handleClick = async (e, _id, dispatch) => {
+  e.stopPropagation();
+  e.preventDefault();
+  const data = await fetch(`http://15.164.142.99:3000/food/${_id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+
+  const result = await data.json();
+
+  dispatch({ type: 'INIT', payload: result });
+};
+
+const Food = ({ _id, name, owner, category, memo, expireDate, storeDuration, dispatch }) => {
   return (
     <Item>
       <Row>
@@ -61,7 +76,7 @@ const Food = ({ id, name, owner, category, memo, expireDate, storeDuration }) =>
       </Row>
       <Row>
         <Expire>남은 보관기간 : {storeDuration} 일</Expire>
-        <Button>x</Button>
+        <Button onClick={e => handleClick(e, _id, dispatch)}>x</Button>
       </Row>
     </Item>
   );

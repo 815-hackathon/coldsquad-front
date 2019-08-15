@@ -106,7 +106,7 @@ const NewFood = props => {
     });
     const result = data.json();
 
-    // props.
+    props.history.push('/');
   };
   return (
     <Wrapper>
